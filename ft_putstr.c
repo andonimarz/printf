@@ -6,9 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 16:06:50 by amarzana          #+#    #+#             */
-/*   Updated: 2022/05/12 16:09:45 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:16:46 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
