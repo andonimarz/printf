@@ -13,12 +13,12 @@
 NAME = libftprintf.a
 
 SRC = 	ft_printf.c 	\
-		ft_putchar.c	\
-		ft_putstr.c		\
-		ft_putvoid.c	\
-		ft_putnbr.c		\
-		ft_putunbr.c	\
-		ft_puthexa.c
+	ft_putchar.c	\
+	ft_putstr.c	\
+	ft_putvoid.c	\
+	ft_putnbr.c	\
+	ft_putunbr.c	\
+	ft_puthexa.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-AR = ar rc
+AR = ar rcs
 
 all: $(NAME)
 
@@ -47,7 +47,7 @@ fclean: clean
 	@$(RM) $(NAME)
 	@echo "$(NAME) deleted"
 
-re: fclean 
+re: fclean all 
 
 norm:
 	@norminette -R CheckForbiddenSourceHeader *.c
