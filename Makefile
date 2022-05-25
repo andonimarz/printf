@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/12 15:06:34 by amarzana          #+#    #+#              #
-#    Updated: 2022/05/12 18:09:22 by amarzana         ###   ########.fr        #
+#    Updated: 2022/05/23 18:01:28 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,35 +22,22 @@ SRC = 	ft_printf.c 	\
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
-
-CFLAGS = -Wall -Wextra -Werror
-
-RM = rm -f
-
-AR = ar rc
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
-	@echo "New files created"
+		ar rcs $(NAME) $(OBJ)
 
 $(OBJ): $(SRC)
-	@$(CC) $(CFLAGS) -c $(SRC)
+		gcc $(CFLAGS) -c $(SRC)
 
 clean:
-	@$(RM) $(OBJ)
-	@echo "$(OBJ) files deleted"
+		@rm -f $(OBJ)
 
 fclean: clean
-	@$(RM) $(NAME)
-	@echo "$(NAME) deleted"
+		@rm -f $(NAME) $(OBJ)
 
-re: fclean 
+re: fclean all
 
-norm:
-	@norminette -R CheckForbiddenSourceHeader *.c
-	@norminette -R CheckDefine *.h
-
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re
